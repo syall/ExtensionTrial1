@@ -1,4 +1,4 @@
-let changeStart = document.getElementById('start');
+var changeStart = document.getElementById('start');
 
 chrome.storage.sync.get('color', function(data) {
   changeStart.style.backgroundColor = data.color;

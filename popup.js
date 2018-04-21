@@ -1,7 +1,7 @@
 function functionStart() {
   let changeStart = document.getElementById("start");
   changeStart.addEventListener("click", function(element) {
-    changeStart.style.background-color.val("red");
+    changeStart.style.backgroundColor = "red";
   });
 }
 

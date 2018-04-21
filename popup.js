@@ -135,14 +135,14 @@ function startTimer(duration, display) {
         
         //When timer reaches 0
         if (--timer < 0) {
-            //Set timer to 0
-            timer = 0;
             //End the timer
             endTime();
             //Return
             return;
             //Print out "Time's Up!"
             document.getElementById("time").innerHTML = "Time's Up!";
+            //Set timer to 0
+            timer = 0;
         }
       
         //If Reset Timer is clicked while still Running

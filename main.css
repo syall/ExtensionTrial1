@@ -1,9 +1,8 @@
 /* Style Sheet */
-.start {
-  background-color = "red";
-}
 .button {
   height: 30px;
   width: 30px;
+}
+#start {
   outline: dashed yellow thick;
 }

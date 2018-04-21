@@ -11,5 +11,5 @@ chrome.storage.sync.get('color', function(data) {
         {code: 'document.body.style.backgroundColor = "' + color + '";'});
   });
   };
-};
+});
 

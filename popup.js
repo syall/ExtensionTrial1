@@ -1,7 +1,7 @@
 var changeStart = document.getElementById('start');
 
 chrome.storage.sync.get('color', function(data) {
-  changeStart.style.backgroundColor = data.color;
+  changeStart.style.backgroundColor = "red";
   changeStart.setAttribute('value', data.color);
   changeStart.onclick = function(element) {
   let color = "red";

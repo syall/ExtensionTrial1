@@ -10,12 +10,13 @@ chrome.storage.sync.get('color', function(data) {
 
 
 changeStart.onclick = function(element) {
-  let color = "red";
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     let changeStart = document.getElementById('start');
+    changeStart.style.backgroundColor = "red"; 
+    changeStart.setAttribute('value', "red");
     chrome.tabs.executeScript(
         tabs[0].id,
-        {code: 'changeStart.style.backgroundColor = "' + color + '"; changeStart.setAttribute("value", color);'});
+        {code: ''});
   });
 };
 

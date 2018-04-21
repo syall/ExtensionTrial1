@@ -1,8 +1,8 @@
 'use strict';
 
 chrome.runtime.onInstalled.addListener(function() {
-  chrome.storage.sync.set({color: '#ffffff'}, function() {
-    console.log('The color is white.');
+  chrome.storage.sync.set({color: '#99ff66'}, function() {
+    console.log('The color is a neon green.');
   });
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
     chrome.declarativeContent.onPageChanged.addRules([{

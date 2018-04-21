@@ -1,9 +1,9 @@
-let changeColor = document.getElementById('start');
+let changeStart = document.getElementById('start');
 
 chrome.storage.sync.get('color', function(data) {
-  changeColor.style.backgroundColor = data.color;
-  changeColor.setAttribute('value', data.color);
-  changeColor.onclick = function(element) {
+  changeStart.style.backgroundColor = data.color;
+  changeStart.setAttribute('value', data.color);
+  changeStart.onclick = function(element) {
   let color = "red";
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.executeScript(

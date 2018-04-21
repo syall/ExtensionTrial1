@@ -5,5 +5,5 @@
 }
 #start,
 #end {
-  outline: solid;
+  outline: 1px solid black;
 }

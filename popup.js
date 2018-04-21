@@ -1,3 +1,8 @@
+var color = "red";
+document.getElementById("start").style.background-color = color;
+
+
+/*
 var changeStart = document.getElementById('start');
 
 chrome.storage.sync.get('color', function(data) {
@@ -12,4 +17,4 @@ chrome.storage.sync.get('color', function(data) {
     });
   };
 });
-
+*/

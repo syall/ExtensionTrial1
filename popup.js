@@ -23,7 +23,7 @@ changeStart.onclick = function(element) {
 
 changeEnd.onclick = function(element) {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    let changeEnd = document.getElementById('start');
+    let changeEnd = document.getElementById('end');
     changeEnd.style.backgroundColor = "white"; 
     changeEnd.setAttribute('value', "white");
     chrome.tabs.executeScript(

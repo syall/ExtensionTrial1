@@ -2,12 +2,11 @@
 
 let changeStart = document.getElementById('start');
 
-/*
+
 chrome.storage.sync.get('color', function(data) {
   changeStart.style.backgroundColor = data.color;
   changeStart.setAttribute('value', data.color);
 });
-*/
 
 
 changeStart.onclick = function(element) {
@@ -16,7 +15,7 @@ changeStart.onclick = function(element) {
     let changeStart = document.getElementById('start');
     chrome.tabs.executeScript(
         tabs[0].id,
-        {code: 'changeStart.style.backgroundColor = "' + color + '"'; 'changeStart.setAttribute("value", color)';});
+        {code: 'changeStart.setAttribute("value", color)';});
   });
 };
 

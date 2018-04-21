@@ -1,8 +1,8 @@
 function functionStart() {
   let changeStart = document.getElementById("start");
-  changeStart.onclick = function(element) {
+  changeStart.addEventListener("click", function(element) {
     changeStart.style.background-color.val("red");
-  };
+  });
 }
 
 /*

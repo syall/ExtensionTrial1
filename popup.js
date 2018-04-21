@@ -15,7 +15,7 @@ changeStart.onclick = function(element) {
     let changeStart = document.getElementById('start');
     chrome.tabs.executeScript(
         tabs[0].id,
-        {code: 'changeStart.setAttribute("value", color)';});
+        {code: 'changeStart.setAttribute("value", color);'});
   });
 };
 

@@ -10,5 +10,6 @@ chrome.storage.sync.get('color', function(data) {
         tabs[0].id,
         {code: 'document.body.style.backgroundColor = "' + color + '";'});
   });
+  };
 };
 

@@ -3,4 +3,11 @@
   "version": "1.0",
   "description": "For the kids that need it for their Standardized Tests.",
   "manifest_version": 2
+  "browser_action": {
+   "default_icon": "icon.png",
+   "default_popup": "popup.html"
+  },
+  "permissions": [
+   "activeTab"
+   ]
 }

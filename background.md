@@ -6,3 +6,4 @@
 - main.css for the aesthetics
 - background.js is not really used (maybe for the future)
 - timer.js was a separate file that was later combined with the current popup.js for all timer logic
+- Use BURNT RICE.mp3 as the audio clip on loop

@@ -1,4 +1,4 @@
-# Extension Trial 1
+# Timer Extension
 HackRU Spring 2018 (April 21-22)
 
 We are experimenting with making Chrome extensions!

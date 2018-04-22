@@ -70,7 +70,7 @@ function add5() {
 //Add 10 minutes
 function add10() {
   //Add 600 seconds
-	settime = settime + 600;
+  settime = settime + 600;
   //Calculate Minutes
   var min = parseInt((settime /60)% 60, 10);
   //Calculate Hours
@@ -84,7 +84,7 @@ function add10() {
 //Add 30 minutes
 function add30() {
   //Add 1800 seconds
-	settime = settime + 1800;
+  settime = settime + 1800;
   //Calculate Minutes
   var min = parseInt((settime /60)% 60, 10);
   //Calculate Hours
@@ -98,7 +98,7 @@ function add30() {
 //Add 60 minutes
 function add60() {
   //Add 3600 seconds
-	settime = settime + 3600;
+  settime = settime + 3600;
   //Calculate Minutes
   var min = parseInt((settime/ 60) % 60, 10);
   //Calculate Hours
@@ -141,8 +141,6 @@ function startTimer(duration, display) {
             return;
             //Print out "Time's Up!"
             document.getElementById("time").innerHTML = "Time's Up!";
-            //Set timer to 0
-            timer = 0;
         }
       
         //If Reset Timer is clicked while still Running

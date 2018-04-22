@@ -15,7 +15,7 @@ This will drive one insane, making the test taker (or whatever victim) close the
 
 To use this, do this in Chrome only (with git installed)...
 - Use the command line: 
->$ git clone https://github.com/syall/ExtensionTrial1.git
+>$ git clone https://github.com/syall/TimerExtension.git
 - After that, go to the Extensions options in the Chrome browser
 - Turn on Developer Mode
 - In the Load Unpacked section, load in the folder that was cloned

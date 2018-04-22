@@ -134,13 +134,13 @@ function startTimer(duration, display) {
         display.textContent = hours + ":" + minutes + ":" + seconds;
         
         //When timer reaches 0
-        if (--timer < 0) {
-            //End the timer
-            endTime();
-            //Print out "Time's Up!"
-            document.getElementById("time").innerHTML = "Time's Up!";
-	      //Return
-	      return;
+        if (--timer < 0 ) {
+          //End the timer
+          endTime();
+          //Print out "Time's Up!"
+          document.getElementById("time").innerHTML = "Time's Up!";
+	        //Return
+	        return;
         }
       
         //If Reset Timer is clicked while still Running
@@ -170,8 +170,9 @@ function endTime() {
     settime = 0;
     //Not running anymore
     running = 0;
-    //Display initial Time
-    document.getElementById("time").innerHTML = "0:00:00";
+    //Play Burnt Rice
+    var audio = new Audio('BURNT RICE.mp3');
+    audio.play();
     //Return
     return;
 };

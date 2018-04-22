@@ -139,16 +139,14 @@ function startTimer(duration, display) {
             endTime();
             //Print out "Time's Up!"
             document.getElementById("time").innerHTML = "Time's Up!";
-	    //Return
-	    return;
+	      //Return
+	      return;
         }
       
         //If Reset Timer is clicked while still Running
         document.getElementById("end").onclick = function(){
           //Set timer to 0
           timer = 0; 
-          //End the Timer
-          endTime(); 
           //Return
           return;
         };

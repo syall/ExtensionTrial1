@@ -1,5 +1,5 @@
 # Extension Trial 1
-HackRU Spring 2018 April 21-22
+HackRU Spring 2018 (April 21-22)
 
 We are experimenting with making Chrome extensions!
 
@@ -9,7 +9,11 @@ This is good for test taking practice online, as you are forced to stay on the p
 
 There are several options, which are adding 1, 5, 10, 30, or 60 minutes, to reach the desired time to count down.
 
-To use this, do this (only on Chrome and having a git)...
+When the alarm sounds, it will keep stacking on an mp3 called BURNT RICE.
+
+This will drive one insane, making the test taker (or whatever victim) close the app and conclude the session!
+
+To use this, do this in Chrome only (with git installed)...
 - Use the command line: 
 >$ git clone https://github.com/syall/ExtensionTrial1.git
 - After that, go to the Extensions options in the Chrome browser
@@ -20,4 +24,4 @@ It should be ready to use!
 
 This is our first attempt at a Chrome extension, so please bear with us.
 
-syall & hx0rz
+*syall & hx0rz*

@@ -3,6 +3,12 @@
 //Seeing whether the timer is running or not
 var running = 0;
 
+//Audio
+var audio;
+
+//Timer
+var intv;
+
 //Define Start and End Timer buttons
 let changeStart = document.getElementById('start');
 let changeEnd = document.getElementById('end');
@@ -20,6 +26,8 @@ var settime = 0;
 
 //If it hasn't started yet
 if(running == 0) {
+  //Now it is running
+  running = 1;
   //Start
   changeStart.onclick = function(){startTime(); return;};
   //Add 1 minute
@@ -35,6 +43,8 @@ if(running == 0) {
 }
 //If it has already started
 else if(running == 1) {
+  //running
+  running = -1;
   //End
   changeEnd.onclick = function(){endTime(); return;};
 }
@@ -111,13 +121,11 @@ function add60() {
 
 //Start Timer
 function startTimer(duration, display) {
-    //Timer Starts Running
-    running = 1;
   
     //Set the Variables timer, hours, minutes, and seconds
     var timer = duration, hours, minutes, seconds;
     //Calculate every Second
-    setInterval(function () {
+    intv = setInterval(function () {
         //Calculate Hours
     	  hours = parseInt(timer/3600, 10)
         //Calculate Minutes
@@ -139,16 +147,12 @@ function startTimer(duration, display) {
           endTime();
           //Print out "Time's Up!"
           document.getElementById("time").innerHTML = "Time's Up!";
-	        //Return
-	        return;
         }
       
         //If Reset Timer is clicked while still Running
         document.getElementById("end").onclick = function(){
           //Set timer to 0
           timer = 0; 
-          //Return
-          return;
         };
       
     }, 1000);
@@ -160,19 +164,15 @@ function startTime() {
     var display = document.querySelector('#time');
     //Call startTimer
     startTimer(settime, display);
-    //Return
-    return;
 };
 
 //End Time Function
 function endTime() {
     //Set total Time to 0
     settime = 0;
-    //Not running anymore
-    running = 0;
+    //clear interval
+    clearInterval(intv);
     //Play Burnt Rice
-    var audio = new Audio('BURNT RICE.mp3');
+    audio = new Audio('BURNT RICE.mp3');
     audio.play();
-    //Return
-    return;
 };

@@ -173,7 +173,7 @@ function startTimer(duration, display) {
                 timer = 0; 
             };
             */
-             
+        //Every 1000 milliseconds 
         }, 1000);
     }
 }

@@ -6,6 +6,8 @@ var running = 0;
 //Audio
 var audio = new Audio('BURNT RICE.mp3');
 
+var isPlay = false;
+
 //Timer
 var intv;
 
@@ -31,15 +33,32 @@ if(running == 0) {
   //Start
   changeStart.onclick = function(){startTime();};
   //Add 1 minute
-  document.getElementById("add1").onclick = function(){add1(); audio.pause();};
+  document.getElementById("add1").onclick = function(){add1(); audio.pause(); isPlay = false;};
   //Add 5 minutes
-  document.getElementById("add5").onclick = function(){add5(); audio.pause();};
+  document.getElementById("add5").onclick = function(){add5(); audio.pause(); isPlay = false;};
   //Add 10 minutes
-  document.getElementById("add10").onclick = function(){add10(); audio.pause();};
+  document.getElementById("add10").onclick = function(){add10(); audio.pause(); isPlay = false;};
   //Add 30 minutes
-  document.getElementById("add30").onclick = function(){add30(); audio.pause();};
+  document.getElementById("add30").onclick = function(){add30(); audio.pause(); isPlay = false;};
   //Add 60 minutes
   document.getElementById("add60").onclick = function(){add60(); audio.pause();};
+  //To end the song
+  changeEnd.onclick = function(){
+    timer = 0;
+    if(isPlay)
+    {
+      audio.pause();
+      isPlay = false;
+    }
+    /*
+    else
+    {
+      audio.load();
+      audio.play();
+      isPlay = true;
+    }
+    */
+  };
 }
 
 //Add 1 minute
@@ -113,42 +132,50 @@ function add60() {
 }
 
 //Start Timer
-function startTimer(duration, display) {
-  
-    //Set the Variables timer, hours, minutes, and seconds
-    var timer = duration, hours, minutes, seconds;
-    //Calculate every Second
-    intv = setInterval(function () {
-        //Calculate Hours
-    	  hours = parseInt(timer/3600, 10)
-        //Calculate Minutes
-        minutes = parseInt((timer / 60) % 60, 10)
-        //Calculate Seconds
-        seconds = parseInt(timer % 60, 10);
-        
-        //Deal with printing the Minutes
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        //Dealing with printing the Seconds
-        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        //Print the Total Time
-        display.textContent = hours + ":" + minutes + ":" + seconds;
-        
-        //When timer reaches 0
-        if (--timer < 0 ) {
-          //End the timer
-          endTime();
-          //Print out "Time's Up!"
-          document.getElementById("time").innerHTML = "Time's Up!";
-        }
-      
-        //If Reset Timer is clicked while still Running
-        document.getElementById("end").onclick = function(){
-          //Set timer to 0
-          timer = 0; 
-        };
-      
-    }, 1000);
+//Set the Variables timer, hours, minutes, and seconds
+var timer, hours, minutes, seconds;
+
+function startTimer(duration, display) {
+   
+    timer = duration;
+    
+    if(timer != 0) {
+    //Calculate every Second
+        intv = setInterval(function () {
+            //Calculate Hours
+            hours = parseInt(timer/3600, 10)
+            //Calculate Minutes
+            minutes = parseInt((timer / 60) % 60, 10)
+            //Calculate Seconds
+            seconds = parseInt(timer % 60, 10);
+            
+            //Deal with printing the Minutes
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            //Dealing with printing the Seconds
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            //Print the Total Time
+            display.textContent = hours + ":" + minutes + ":" + seconds;
+            
+            //When timer reaches 0
+            if (--timer < 0 ) {
+              //End the timer
+              endTime();
+              //Print out "Time's Up!"
+              document.getElementById("time").innerHTML = "Time's Up!";
+            }
+          
+            /*
+            //If Reset Timer is clicked while still Running
+            document.getElementById("end").onclick = function(){
+                //Set timer to 0
+                timer = 0; 
+            };
+            */
+             
+        }, 1000);
+    }
 }
 
 //Start Time Wrapping Function
@@ -163,9 +190,12 @@ function startTime() {
 function endTime() {
     //Set total Time to 0
     settime = 0;
+    //Set running
+    running = 0;
     //clear interval
     clearInterval(intv);
     //Play Burnt Rice
     audio.load();
     audio.play();
+    isPlay = true;
 };

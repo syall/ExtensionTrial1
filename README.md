@@ -3,13 +3,13 @@ HackRU Spring 2018 (April 21-22)
 
 We are experimenting with making Chrome extensions!
 
-This is a one-time use timer, in which you must stay on the tab to use.
+This is a timer, in which you must stay on the tab to use.
 
 This is good for test taking practice online, as you are forced to stay on the page or else the timer will reset (a.k.a no cheating).
 
 There are several options, which are adding 1, 5, 10, 30, or 60 minutes, to reach the desired time to count down.
 
-When the alarm sounds, it will keep stacking on an mp3 called BURNT RICE.
+When the alarm sounds, it will play an mp3 called BURNT RICE.
 
 This will drive one insane, making the test taker (or whatever victim) close the app and conclude the session!
 

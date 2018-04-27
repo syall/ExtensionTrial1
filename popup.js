@@ -4,7 +4,7 @@
 var running = 0;
 
 //Audio
-var audio;
+var audio = new Audio('BURNT RICE.mp3');
 
 //Timer
 var intv;
@@ -29,24 +29,17 @@ if(running == 0) {
   //Now it is running
   running = 1;
   //Start
-  changeStart.onclick = function(){startTime(); return;};
+  changeStart.onclick = function(){startTime();};
   //Add 1 minute
-  document.getElementById("add1").onclick = function(){add1()};
+  document.getElementById("add1").onclick = function(){add1(); audio.pause();};
   //Add 5 minutes
-  document.getElementById("add5").onclick = function(){add5()};
+  document.getElementById("add5").onclick = function(){add5(); audio.pause();};
   //Add 10 minutes
-  document.getElementById("add10").onclick = function(){add10()};
+  document.getElementById("add10").onclick = function(){add10(); audio.pause();};
   //Add 30 minutes
-  document.getElementById("add30").onclick = function(){add30()};
+  document.getElementById("add30").onclick = function(){add30(); audio.pause();};
   //Add 60 minutes
-  document.getElementById("add60").onclick = function(){add60()};
-}
-//If it has already started
-else if(running == 1) {
-  //running
-  running = -1;
-  //End
-  changeEnd.onclick = function(){endTime(); return;};
+  document.getElementById("add60").onclick = function(){add60(); audio.pause();};
 }
 
 //Add 1 minute
@@ -173,6 +166,6 @@ function endTime() {
     //clear interval
     clearInterval(intv);
     //Play Burnt Rice
-    audio = new Audio('BURNT RICE.mp3');
+    audio.load();
     audio.play();
 };
